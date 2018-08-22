@@ -57,17 +57,17 @@
         });
 
         const calculateBMI = () => {
-            let method = global.methodSelector.options[global.methodSelector.selectedIndex].value
+            let method = global.methodSelector.options[global.methodSelector.selectedIndex].value;
             return new Promise(resolve => {
-                let weightFormat = methods === 'metric' ? 'weight-in-kgs' : 'weight-in-lbs'
-                let heightFormat = methods === 'metric' ? 'height-in-cm' : 'height-in-in'
+                let weightFormat = method === 'metric' ? 'weight-in-kgs' : 'weight-in-lbs';
+                let heightFormat = method === 'metric' ? 'height-in-cm' : 'height-in-in';
                 let w = parseFloat(document.getElementById(weightFormat).value);
                 let h = parseFloat(document.getElementById(heightFormat).value);
                 let person = new Person({
                     weight: w,
                     height: h,
                 });
-                method === 'metric' ? person.calculate_bmi() : person.calculate_bmi_imperial();
+                method === 'metric' ? person.calculate_bmi() : person.calculate_imperial_bmi();
                 resolve(person);
             })
         };

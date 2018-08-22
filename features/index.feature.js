@@ -27,7 +27,7 @@ describe('User can calculate BMI using metric method', () => {
     });
 });
 
-describe('User can calculate BMI usin imperial method', () => {
+describe('User can calculate BMI using imperial method', () => {
     before(async () => {
         await browser.init()
         await browser.visitPage('http://localhost:8080/')
