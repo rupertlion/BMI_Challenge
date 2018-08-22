@@ -46,7 +46,6 @@ describe('User can calculate BMI using imperial method', () => {
         await browser.fillIn("input[id='weight-in-lbs']", { with: "170" })
         await browser.fillIn("input[id='height-in-ft']", { with: "5" })
         await browser.fillIn("input[id='height-in-inches']", { with: "10" })
-
         await browser.clickOnButton("button")
         let content = await browser.getContent("span[id='display_value']")
         expect(content).to.eql('Your BMI is 24.39');
